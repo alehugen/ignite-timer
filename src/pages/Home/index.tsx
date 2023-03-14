@@ -26,6 +26,7 @@ type NewCycleFormData = zod.infer<typeof newCycleFormSchema>
 export default function Home() {
   const { activeCycle, createNewCycle, interruptCycle } =
     useContext(CyclesContext)
+
   const newCycleForm = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormSchema),
     defaultValues: {
